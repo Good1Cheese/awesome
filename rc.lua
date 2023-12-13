@@ -47,7 +47,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/cheese/.config/awesome/themes/default/theme.lua")
+beautiful.init("/home/cheese/.config/awesome/theme/theme.lua")
 beautiful.useless_gap = 5
 
 -- This is used later as the default terminal and editor to run.
@@ -530,6 +530,6 @@ awful.spawn.with_shell("setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'
 awful.spawn.with_shell("xset r rate 200 35; setxkbmap -option caps:escape")
 --awful.spawn.with_shell("setxkbmap -option caps:escape")
 
-awful.spawn.with_shell("gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'")
-awful.spawn.with_shell("gsettings set org.gnome.desktop.wm.preferences theme 'Nordic'")
+--awful.spawn.with_shell("gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'")
+--awful.spawn.with_shell("gsettings set org.gnome.desktop.wm.preferences theme 'Nordic'")
 -- ******************************************
