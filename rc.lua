@@ -517,10 +517,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 
--- USER FILES
+-- CUSTOM
 -- ******************************************
-
--- TODO
 
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("redshift -x; redshift -O 3500")
