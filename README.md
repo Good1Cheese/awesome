@@ -1,5 +1,11 @@
 # awesome
 
+### Plugins required
+
+```
+https://github.com/Elv13/collision
+```
+
 ### Packages required
 
 ```
