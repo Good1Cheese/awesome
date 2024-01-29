@@ -49,7 +49,7 @@ beautiful.init("/home/cheese/.config/awesome/theme.lua")
 beautiful.useless_gap = 5
 
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "vim"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
@@ -249,6 +249,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.spawn("dmenu_run") end,
               {description = "launch dmenu", group = "launcher"}),
 
+    awful.key({ modkey, "Shift"   }, "d",     function () awful.spawn("flameshot gui") end,
+              {description = "make screenshot", group = "launcher"}),
+
     awful.key({ modkey },            "e",     function () awful.spawn("rand") end,
               {description = "launch ranger", group = "launcher"})
 )
@@ -443,11 +446,14 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn.with_shell("picom &")
 awful.spawn.with_shell("udiskie &")
+awful.spawn.with_shell("firefox &")
+awful.spawn.with_shell("flameshot &")
+awful.spawn.with_shell("telegram-desktop &")
 awful.spawn.with_shell("redshift -x; redshift -O 3500")
 --awful.spawn.with_shell("nitrogen --restore")
 
 -- awful.spawn.with_shell("setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'")
-awful.spawn.with_shell("setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'")
+awful.spawn.with_shell("setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'")
 awful.spawn.with_shell("xset r rate 200 35; setxkbmap -option caps:escape")
 
 --awful.spawn.with_shell("gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'")
