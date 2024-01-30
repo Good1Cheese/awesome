@@ -253,7 +253,7 @@ globalkeys = gears.table.join(
               {description = "make screenshot", group = "launcher"}),
 
     awful.key({ modkey },            "e",     function () awful.spawn("rand") end,
-              {description = "launch ranger", group = "launcher"})
+              {description = "launch lf", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -421,6 +421,9 @@ awful.rules.rules = {
 }
 -- }}}
 
+-- local systray = wibox.widget.systray()
+-- systray:set_base_size25)
+
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
@@ -447,7 +450,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("picom &")
 awful.spawn.with_shell("udiskie &")
 awful.spawn.with_shell("firefox &")
-awful.spawn.with_shell("flameshot &")
+-- awful.spawn.with_shell("flameshot &")
 awful.spawn.with_shell("telegram-desktop &")
 awful.spawn.with_shell("redshift -x; redshift -O 3500")
 --awful.spawn.with_shell("nitrogen --restore")
