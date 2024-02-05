@@ -215,6 +215,8 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
+    awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("shutdown now") end,
+              {description = "shutdown", group = "awesome"}),
 
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -447,15 +449,21 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- CUSTOM
 -- ******************************************
 
-awful.spawn.with_shell("picom &")
-awful.spawn.with_shell("udiskie &")
-awful.spawn.with_shell("firefox &")
--- awful.spawn.with_shell("flameshot &")
-awful.spawn.with_shell("telegram-desktop &")
-awful.spawn.with_shell("redshift -x; redshift -O 3500")
---awful.spawn.with_shell("nitrogen --restore")
+local programs = {
+    "picom",
+    "udiskie",
+    "firefox",
+    "telegram-desktop"
+}
 
--- awful.spawn.with_shell("setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'")
+if awesome.startup then
+    for k, v in ipairs(programs) do
+        awful.spawn.once(v, {})
+    end
+end
+
+awful.spawn.with_shell("redshift -x; redshift -O 3500")
+awful.spawn.with_shell("flameshot gui & disown")
 awful.spawn.with_shell("setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'")
 awful.spawn.with_shell("xset r rate 200 35; setxkbmap -option caps:escape")
 

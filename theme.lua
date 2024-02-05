@@ -52,6 +52,8 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
 
+-- (and then replace right_layout:add(wibox.widget.systray()) with right_layout:add(systray()
+
 -- Variables set for theming notifications:
 -- notification_font
 -- notification_[bg|fg]
@@ -97,7 +99,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "~/.config/awesome/wallpapers/-wqNhrEkotk.jpg"
+theme.wallpaper = "~/.config/awesome/wallpapers/first.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
