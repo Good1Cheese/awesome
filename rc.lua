@@ -450,18 +450,20 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- ******************************************
 
 local programs = {
-    "picom",
     "udiskie",
     "firefox",
-    "telegram-desktop"
+    "telegram-desktop -startintray",
+    -- "heroic -startintray",
+    "discord --start-minimized"
 }
 
 if awesome.startup then
     for k, v in ipairs(programs) do
-        awful.spawn.once(v, {})
+        awful.spawn.single_instance(v, {})
     end
 end
 
+awful.spawn.with_shell("picom")
 awful.spawn.with_shell("setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'")
 awful.spawn.with_shell("redshift -x; redshift -O 3500")
 awful.spawn.with_shell("xset r rate 200 35; setxkbmap -option caps:escape")
