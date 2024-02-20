@@ -6,10 +6,11 @@
 https://github.com/Elv13/collision
 ```
 
-### Packages required
+### Packages required (extra repository required)
 
 ```
-sudo pacman -S xorg awesome dmenu redshift allusive-dev/compfy nitrogen udiskie flameshot
+sudo pacman -S xorg redshift dmenu xwallpaper udiskie flameshot
+yay -S awesome-git compfy
 ```
 
 ### [My software](https://github.com/Good1Cheese/LinuxSetup)
