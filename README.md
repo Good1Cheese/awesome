@@ -1,5 +1,8 @@
 # awesome
 
+Font - JetBrainsMono Nerd Font<br>
+Terminal - Alacritty
+
 ### Plugins required
 
 ```
