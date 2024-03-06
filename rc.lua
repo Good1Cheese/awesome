@@ -256,6 +256,8 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey }, "r", function() awful.spawn("dmenu_run") end,
         { description = "launch dmenu", group = "launcher" }),
+    awful.key({ modkey }, "a", function() awful.spawn("clipmenu") end,
+        { description = "launch clipmenu", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "d", function() awful.spawn("flameshot gui") end,
         { description = "make screenshot", group = "launcher" }),
     awful.key({ modkey }, "e", function() awful.spawn("rand") end,
@@ -394,5 +396,10 @@ awful.rules.rules = {
 }
 -- }}}
 
-awful.spawn.with_shell("xwallpaper --zoom ~/.config/awesome/wallpapers/zwei.jpg")
 awful.spawn.with_shell("exec ~/.config/awesome/startup.sh")
+awful.spawn.with_shell([[
+    xwallpaper --zoom ~/.config/awesome/wallpapers/zwei.jpg;
+    setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle';
+    redshift -x; redshift -O 3500;
+    xset r rate 200 35; setxkbmap -option caps:escape;
+;]])
