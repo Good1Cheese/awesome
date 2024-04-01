@@ -13,5 +13,5 @@ https://github.com/Elv13/collision
 
 ```
 sudo pacman -S xorg redshift dmenu xwallpaper udiskie flameshot 
-yay -S awesome-git compfy clipmenu polkit-gnome
+yay -S awesome-git compfy clipmenu polkit-gnome tabbed
 ```
