@@ -216,13 +216,13 @@ globalkeys = gears.table.join(
         { description = "go back", group = "client" }),
 
     -- Standard program
-    awful.key({ modkey, }, "Return", function() awful.spawn("tabbed alacritty --embed") end,
+    awful.key({ modkey, }, "Return", function() awful.spawn("alacritty") end,
         { description = "open a terminal", group = "launcher" }),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         { description = "reload awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "q", awesome.quit,
         { description = "quit awesome", group = "awesome" }),
-    awful.key({ modkey, "Shift" }, "w", function() awful.spawn("shutdown now") end,
+    awful.key({ modkey, "Shift" }, "w", function() awful.spawn("sudo shutdown now") end,
         { description = "shutdown", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn("systemctl suspend") end,
         { description = "shutdown", group = "awesome" }),
