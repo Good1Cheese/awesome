@@ -224,6 +224,8 @@ globalkeys = gears.table.join(
         { description = "quit awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "w", function() awful.spawn("sudo shutdown now") end,
         { description = "shutdown", group = "awesome" }),
+    awful.key({ modkey, "Shift" }, "`", function() awful.spawn("reboot") end,
+        { description = "reboot", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn("systemctl suspend") end,
         { description = "shutdown", group = "awesome" }),
     awful.key({ modkey, }, "h", function() awful.tag.incmwfact(0.05) end,
