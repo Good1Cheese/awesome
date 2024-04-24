@@ -402,7 +402,7 @@ awful.rules.rules = {
 
 awful.spawn.with_shell("exec ~/.config/awesome/startup.sh")
 awful.spawn.with_shell([[
-    xwallpaper --zoom ~/.config/awesome/wallpapers/zwoelf.png;
+    xwallpaper --zoom ~/.config/awesome/wallpapers/green.jpg;
     setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle';
     redshift -x; redshift -O 3500;
     xset r rate 200 35; setxkbmap -option caps:escape;
