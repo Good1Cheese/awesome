@@ -216,8 +216,10 @@ globalkeys = gears.table.join(
         { description = "go back", group = "client" }),
 
     -- Standard program
-    awful.key({ modkey, }, "Return", function() awful.spawn("alacritty") end,
+    awful.key({ modkey, "Shift" }, "Return", function() awful.spawn("alacritty") end,
         { description = "open a terminal", group = "launcher" }),
+    awful.key({ modkey, }, "Return", function() awful.spawn("tabbed alacritty --embed") end,
+        { description = "open a terminal 2", group = "launcher" }),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         { description = "reload awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "q", awesome.quit,
