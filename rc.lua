@@ -50,7 +50,7 @@ end
 -- {{{ Variables
 beautiful.init("/home/cheese/.config/awesome/theme.lua")
 
-terminal = "alacritty"
+terminal = "wezterm"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
@@ -216,10 +216,8 @@ globalkeys = gears.table.join(
         { description = "go back", group = "client" }),
 
     -- Standard program
-    awful.key({ modkey, "Shift" }, "Return", function() awful.spawn("alacritty") end,
+    awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
-    awful.key({ modkey, }, "Return", function() awful.spawn("tabbed alacritty --embed") end,
-        { description = "open a terminal 2", group = "launcher" }),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         { description = "reload awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "q", awesome.quit,
@@ -266,7 +264,7 @@ globalkeys = gears.table.join(
         { description = "launch clipmenu", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "d", function() awful.spawn("flameshot gui") end,
         { description = "make screenshot", group = "launcher" }),
-    awful.key({ modkey }, "e", function() awful.spawn('alacritty -e fish -c "lf; fish"') end,
+    awful.key({ modkey }, "e", function() awful.spawn(terminal .. ' -e fish -c "lf; fish"') end,
         { description = "launch lf", group = "launcher" })
 )
 
@@ -404,7 +402,7 @@ awful.rules.rules = {
 
 awful.spawn.with_shell("exec ~/.config/awesome/startup.sh")
 awful.spawn.with_shell([[
-    xwallpaper --zoom ~/.config/awesome/wallpapers/green.jpg;
+    xwallpaper --zoom ~/.config/awesome/wallpapers/eins.png
     setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle';
     redshift -x; redshift -O 3500;
     xset r rate 200 35; setxkbmap -option caps:escape;
