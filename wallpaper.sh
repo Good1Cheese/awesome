@@ -1,1 +1,1 @@
-xwallpaper --zoom /home/cheese/.config/awesome/wallpapers/drei.png
+xwallpaper --zoom /home/cheese/.config/awesome/wallpapers/wallhaven-jxjrww.png
