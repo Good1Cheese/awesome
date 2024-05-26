@@ -6,9 +6,10 @@
 #
 touch ~/awesome-startup
 
+~/.config/awesome/layoutchanger.bash &
 steam -silent &
 udiskie &
-firefox &
+librewolf &
 telegram-desktop -startintray &
 discord --start-minimized &
 clipmenud &
