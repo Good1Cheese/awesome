@@ -7,12 +7,16 @@
 # Menu items
 items="suspend
 reboot
+reloadWM
 poweroff"
 
 # Open menu
 selection=$(printf '%s' "$items" | $DMENU)
 
 case $selection in
+	reloadWM)
+		awesome-client 'awesome.restart()'
+		;;
 	restart)
 		restart
 		;;
