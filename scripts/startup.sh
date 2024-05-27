@@ -6,7 +6,7 @@
 #
 touch ~/awesome-startup
 
-~/.config/awesome/layoutchanger.bash &
+~/.config/awesome/scripts/layoutchanger.bash &
 steam -silent &
 udiskie &
 librewolf &

@@ -55,6 +55,11 @@ editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
+local scriptspath = "exec ~/.config/awesome/scripts/"
+local wallscript = scriptspath .. "wallpaper.sh"
+local startscript = scriptspath .. "startup.sh"
+local bookmakrsscript = scriptspath .. "dmenu-bookmarks.bash"
+
 awful.layout.layouts = {
     awful.layout.suit.tile.left,
     awful.layout.suit.floating,
@@ -267,7 +272,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "d", function() awful.spawn("flameshot gui") end,
         { description = "make screenshot", group = "launcher" }),
     awful.key({ modkey }, "e", function() awful.spawn(terminal .. ' -e fish -c "yy; fish"') end,
-        { description = "launch lf", group = "launcher" })
+        { description = "launch lf", group = "launcher" }),
+    awful.key({ modkey, "Shift" }, "e", function() awful.spawn.with_shell(bookmakrsscript) end,
+        { description = "launch bookmakrsscript", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
@@ -402,8 +409,9 @@ awful.rules.rules = {
 }
 -- }}}
 
-awful.spawn.with_shell("exec ~/.config/awesome/startup.sh")
-awful.spawn.with_shell("exec ~/.config/awesome/wallpaper.sh")
+awful.spawn.with_shell(startscript)
+awful.spawn.with_shell(wallscript)
+
 awful.spawn.with_shell([[
     setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle';
     redshift -x; redshift -O 3500;
