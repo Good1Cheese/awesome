@@ -3,6 +3,7 @@
 c=~/.config
 C=~/.config/compfy
 n=~/.config/nvim
+[=~/phone
 b=~/nixos-config/nixos
 a=~/.config/awesome
 f=~/.config/fish

@@ -59,6 +59,7 @@ local scriptspath = "exec ~/.config/awesome/scripts/"
 local wallscript = scriptspath .. "wallpaper.sh"
 local startscript = scriptspath .. "startup.sh"
 local bookmakrsscript = scriptspath .. "dmenu-bookmarks.bash"
+local logoutscript = scriptspath .. "logout.bash"
 
 awful.layout.layouts = {
     awful.layout.suit.tile.left,
@@ -227,12 +228,8 @@ globalkeys = gears.table.join(
         { description = "reload awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "q", awesome.quit,
         { description = "quit awesome", group = "awesome" }),
-    awful.key({ modkey, "Shift" }, "w", function() awful.spawn("sudo shutdown now") end,
-        { description = "shutdown", group = "awesome" }),
-    awful.key({ modkey, "Shift" }, "`", function() awful.spawn("reboot") end,
+    awful.key({ modkey, "Shift" }, "`", function() awful.spawn.with_shell(logoutscript) end,
         { description = "reboot", group = "awesome" }),
-    awful.key({ modkey, "Shift" }, "s", function() awful.spawn("systemctl suspend") end,
-        { description = "suspend", group = "awesome" }),
     awful.key({ modkey, }, "h", function() awful.tag.incmwfact(0.05) end,
         { description = "increase master width factor", group = "layout" }),
     awful.key({ modkey, }, "l", function() awful.tag.incmwfact(-0.05) end,
