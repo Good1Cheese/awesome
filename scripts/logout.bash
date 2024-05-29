@@ -5,28 +5,25 @@
 [ -f "$HOME/.dmenurc" ] && . "$HOME/.dmenurc" || DMENU='dmenu -i'
 
 # Menu items
-items="suspend
-reboot
-reloadWM
-poweroff"
+items="sus
+reb
+relo
+pow"
 
 # Open menu
 selection=$(printf '%s' "$items" | $DMENU)
 
 case $selection in
-	reloadWM)
+	relo)
 		awesome-client 'awesome.restart()'
 		;;
-	restart)
-		restart
-		;;
-	suspend)
-		systemctl suspend
-		;;
-	reboot)
+	reb)
 		reboot
 		;;
-	halt|poweroff|shutdown)
+	sus)
+		systemctl suspend
+		;;
+	pow)
 		sudo shutdown now
 		;;
 esac
