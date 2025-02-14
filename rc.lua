@@ -262,7 +262,7 @@ globalkeys = gears.table.join(
         { description = "launch dmenu", group = "launcher" }),
 	awful.key({ modkey }, "o", function() awful.spawn("keepmenu") end,
 		{ description = "launch keepmenu", group = "launcher" }),
-    awful.key({ modkey }, "a", function() awful.spawn("clipmenu") end,
+    awful.key({ modkey }, "a", function() awful.spawn("clipcat") end,
         { description = "launch clipmenu", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "d", function() awful.spawn("flameshot gui") end,
         { description = "make screenshot", group = "launcher" }),
