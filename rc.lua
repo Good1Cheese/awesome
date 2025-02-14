@@ -258,11 +258,11 @@ globalkeys = gears.table.join(
         { description = "restore minimized", group = "client" }),
 
     -- Prompt
-    awful.key({ modkey }, "p", function() awful.spawn("dmenu_run") end,
+    awful.key({ modkey }, "p", function() awful.spawn("bemenu-run") end,
         { description = "launch dmenu", group = "launcher" }),
 	awful.key({ modkey }, "o", function() awful.spawn("keepmenu") end,
 		{ description = "launch keepmenu", group = "launcher" }),
-    awful.key({ modkey }, "a", function() awful.spawn("clipcat") end,
+    awful.key({ modkey }, "a", function() awful.spawn("clipcat-menu") end,
         { description = "launch clipmenu", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "d", function() awful.spawn("flameshot gui") end,
         { description = "make screenshot", group = "launcher" }),
