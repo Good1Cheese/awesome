@@ -12,6 +12,7 @@ udiskie &
 firefox &
 telegram-desktop -startintray &
 discord --start-minimized &
+xrandr -r 75 &
 clipcatd &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # compfy -b &
