@@ -1,31 +1,20 @@
 #!/usr/bin/env bash
 
-# Load dmenu config
-# shellcheck source=/dev/null
-[ -f "$HOME/.dmenurc" ] && . "$HOME/.dmenurc" || DMENU='dmenu -i'
+entries="⏻ Shutdown\n⏾ Suspend\n⭮ Reboot\n⇠ Logout"
 
-# Menu items
-items="sus
-reb
-relo
-pow"
+selected=$(echo -e $entries | bemenu -c -l 4 -W .4 | awk '{print tolower($2)}')
 
-# Open menu
-selection=$(printf '%s' "$items" | $DMENU)
-
-case $selection in
-	relo)
-		awesome-client 'awesome.restart()'
-		;;
-	reb)
-		reboot
-		;;
-	sus)
-		systemctl suspend
-		;;
-	pow)
-		sudo shutdown now
-		;;
+case $selected in
+logout)
+	swaymsg exit
+	;;
+suspend)
+	exec systemctl suspend
+	;;
+reboot)
+	exec systemctl reboot
+	;;
+shutdown)
+	exec systemctl poweroff -i
+	;;
 esac
-
-exit

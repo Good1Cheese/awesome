@@ -258,16 +258,16 @@ globalkeys = gears.table.join(
         { description = "restore minimized", group = "client" }),
 
     -- Prompt
-    awful.key({ modkey }, "r", function() awful.spawn("dmenu_run") end,
+    awful.key({ modkey }, "p", function() awful.spawn("dmenu_run") end,
         { description = "launch dmenu", group = "launcher" }),
-	awful.key({ modkey, "Shift" }, "r", function() awful.spawn("keepmenu") end,
+	awful.key({ modkey }, "o", function() awful.spawn("keepmenu") end,
 		{ description = "launch keepmenu", group = "launcher" }),
     awful.key({ modkey }, "a", function() awful.spawn("clipmenu") end,
         { description = "launch clipmenu", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "d", function() awful.spawn("flameshot gui") end,
         { description = "make screenshot", group = "launcher" }),
     awful.key({ modkey }, "e", function() awful.spawn(terminal .. ' -e fish -c "yy; fish"') end,
-        { description = "launch lf", group = "launcher" }),
+        { description = "launch yazi", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "e", function() awful.spawn.with_shell(bookmakrsscript) end,
         { description = "launch bookmakrsscript", group = "launcher" })
 )
@@ -281,7 +281,7 @@ clientkeys = gears.table.join(
         { description = "toggle fullscreen", group = "client" }),
     awful.key({ modkey, }, "q", function(c) c:kill() end,
         { description = "close", group = "client" }),
-    awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle,
+    awful.key({ modkey }, "v", awful.client.floating.toggle,
         { description = "toggle floating", group = "client" }),
     awful.key({ modkey, "Control" }, "Return", function(c) c:swap(awful.client.getmaster()) end,
         { description = "move to master", group = "client" }),
@@ -400,8 +400,8 @@ awful.rules.rules = {
             screen = awful.screen.preferred,
             placement = awful.placement.no_overlap + awful.placement.no_offscreen
         }
+    }
     },
-}
 -- }}}
 
 awful.spawn.with_shell(startscript)
@@ -409,6 +409,6 @@ awful.spawn.with_shell(wallscript)
 
 awful.spawn.with_shell([[
     setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle';
-    redshift -x; redshift -O 3500;
-    xset r rate 200 35; setxkbmap -option caps:escape;
+    xsct 4000;
+    xset r rate 155 35; setxkbmap -option caps:escape;
 ;]])

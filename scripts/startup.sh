@@ -9,10 +9,10 @@ touch ~/awesome-startup
 ~/.config/awesome/scripts/layoutchanger.bash &
 steam -silent &
 udiskie &
-librewolf &
+firefox &
 telegram-desktop -startintray &
 discord --start-minimized &
 clipmenud &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-compfy -b &
-# flameshot & disown &
+# compfy -b &
+flameshot & disown &
