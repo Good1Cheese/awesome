@@ -17,3 +17,4 @@ clipcatd &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # compfy -b &
 flameshot & disown &
+sudo bash ~/zapret-discord-youtube-linux/main_script.sh -nointeractive -debug

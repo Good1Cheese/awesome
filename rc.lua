@@ -70,6 +70,7 @@ awful.layout.layouts = {
 
 
 -- {{{ Widgets
+
 mykeyboardlayout = awful.widget.keyboardlayout()
 mykeyboardlayout2 = string.format(" [%s] ", mykeyboardlayout)
 
@@ -230,8 +231,8 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
-    awful.key({ modkey, "Shift" }, "q", awesome.quit,
-        { description = "quit awesome", group = "awesome" }),
+    -- awful.key({ modkey, "Shift" }, "q", awesome.quit,
+    --     { description = "quit awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "`", function() awful.spawn.with_shell(logoutscript) end,
         { description = "reboot", group = "awesome" }),
     awful.key({ modkey, }, "h", function() awful.tag.incmwfact(0.05) end,
