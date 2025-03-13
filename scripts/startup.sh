@@ -9,12 +9,12 @@ touch ~/awesome-startup
 ~/.config/awesome/scripts/layoutchanger.bash &
 steam -silent &
 udiskie &
-firefox &
+floorp &
 telegram-desktop -startintray &
 discord --start-minimized &
 xrandr -r 75 &
 clipcatd &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# compfy -b &
+# dunst &
+picom &
 flameshot & disown &
-sudo bash ~/zapret-discord-youtube-linux/main_script.sh -nointeractive -debug

@@ -81,7 +81,7 @@ separator = wibox.widget {
     widget = wibox.widget.textbox
 }
 
-my_textclock = wibox.widget.textclock(' %a %b %d, %H:%M ')
+my_textclock = wibox.widget.textclock(" %a %b %d, %H:%M ")
 
 local taglist_buttons = gears.table.join(
     awful.button({}, 1, function(t) t:view_only() end),
@@ -205,6 +205,17 @@ globalkeys = gears.table.join(
               end,
               { description = "view tag 9", group = "tag" }),
 
+
+    awful.key({ modkey, "Shift" }, "s",
+              function()
+                  if client.focus then
+                      local tag = client.focus.screen.tags[9]
+                      if tag then
+                          client.focus:move_to_tag(tag)
+                      end
+                  end
+              end,
+              { description = "move focused client to tag 9", group = "tag" }),
     awful.key({ modkey, }, "Escape", awful.tag.history.restore,
               { description = "go back", group = "tag" }),
     awful.key({ modkey, }, "k", function()
