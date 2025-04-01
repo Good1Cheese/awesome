@@ -10,7 +10,7 @@ touch ~/awesome-startup
 steam -silent &
 udiskie &
 floorp &
-telegram-desktop -startintray &
+64gram-desktop -startintray &
 discord --start-minimized &
 xrandr -r 75 &
 clipcatd &

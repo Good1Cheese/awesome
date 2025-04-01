@@ -48,7 +48,7 @@ end
 -- }}}
 
 -- {{{ Variables
-beautiful.init("/home/cheese/.config/awesome/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
 
 terminal = "wezterm"
 editor = os.getenv("EDITOR") or "nvim"
