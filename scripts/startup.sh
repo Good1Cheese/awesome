@@ -11,10 +11,11 @@ steam -silent &
 udiskie &
 floorp &
 64gram-desktop -startintray &
-discord --start-minimized &
+vesktop --start-minimized &
 xrandr -r 75 &
 clipcatd &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 # dunst &
 picom &
-flameshot & disown &
+# flameshot & disown &
