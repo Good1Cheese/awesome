@@ -56,7 +56,6 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 local scriptspath = "exec ~/.config/awesome/scripts/"
-local wallscript = scriptspath .. "wallpaper.sh"
 local startscript = scriptspath .. "startup.sh"
 local bookmakrsscript = scriptspath .. "dmenu-bookmarks.bash"
 local logoutscript = scriptspath .. "logout.bash"
@@ -193,8 +192,8 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
--- awful.key({ modkey, }, "s", hotkeys_popup.show_help,
---     { description = "show help", group = "awesome" }),
+    awful.key({ modkey, "Control" }, "s", hotkeys_popup.show_help,
+        { description = "show help", group = "awesome" }),
     awful.key({ modkey }, "s",
               function()
                   local screen = awful.screen.focused()
@@ -234,9 +233,9 @@ globalkeys = gears.table.join(
               { description = "swap with next client by index", group = "client" }),
     awful.key({ modkey, "Shift" }, "k", function() awful.client.swap.byidx(-1) end,
               { description = "swap with previous client by index", group = "client" }),
-    awful.key({ modkey, "Control" }, "j", function() awful.screen.focus_relative(1) end,
+    awful.key({ modkey }, "j", function() awful.screen.focus_relative(1) end,
               { description = "focus the next screen", group = "screen" }),
-    awful.key({ modkey, "Control" }, "k", function() awful.screen.focus_relative(-1) end,
+    awful.key({ modkey }, "k", function() awful.screen.focus_relative(-1) end,
               { description = "focus the previous screen", group = "screen" }),
     awful.key({ modkey, }, "u", awful.client.urgent.jumpto,
               { description = "jump to urgent client", group = "client" }),
@@ -288,13 +287,15 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey }, "p", function() awful.spawn("bemenu-run") end,
               { description = "launch dmenu", group = "launcher" }),
-    awful.key({ modkey }, "o", function() awful.spawn("keepmenu") end,
+    awful.key({ modkey, "Shift" }, "o", function() awful.spawn("keepmenu") end,
               { description = "launch keepmenu", group = "launcher" }),
     awful.key({ modkey }, "a", function() awful.spawn("clipcat-menu") end,
               { description = "launch clipmenu", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "d", function() awful.spawn("flameshot gui") end,
               { description = "make screenshot", group = "launcher" }),
     awful.key({ modkey }, "e", function() awful.spawn(terminal .. ' -e fish -c "yy; fish"') end,
+              { description = "launch yazi", group = "launcher" }),
+    awful.key({ modkey }, ";", function() awful.spawn(terminal .. ' -e btop') end,
               { description = "launch yazi", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "e", function() awful.spawn.with_shell(bookmakrsscript) end,
               { description = "launch bookmakrsscript", group = "launcher" })
@@ -313,7 +314,7 @@ clientkeys = gears.table.join(
               { description = "toggle floating", group = "client" }),
     awful.key({ modkey, "Control" }, "Return", function(c) c:swap(awful.client.getmaster()) end,
               { description = "move to master", group = "client" }),
-    awful.key({ modkey, }, "o", function(c) c:move_to_screen() end,
+    awful.key({ modkey }, "o", function(c) c:move_to_screen() end,
               { description = "move to screen", group = "client" }),
     awful.key({ modkey, }, "t", function(c) c.ontop = not c.ontop end,
               { description = "toggle keep on top", group = "client" }),
@@ -426,7 +427,11 @@ awful.rules.rules = {
                 keys = clientkeys,
                 buttons = clientbuttons,
                 screen = awful.screen.preferred,
-                placement = awful.placement.no_overlap + awful.placement.no_offscreen
+                placement = awful.placement.no_overlap+awful.placement.no_offscreen,
+                maximized_vertical = false,
+                maximized_horizontal = false,
+                floating = false,
+                maximized = false
             }
         },
 
@@ -450,13 +455,32 @@ awful.rules.rules = {
                 floating = true,
                 placement = awful.placement.centered,
             }
+        },
+        {
+            rule_any = { class = { "vesktop" } },
+            properties = {
+                screen = 3,
+                tag = "1"
+            }
+        },
+        {
+            rule_any = { class = { "discord" } },
+            properties = {
+                screen = 3,
+                tag = "1"
+            }
+        },
+        {
+            rule_any = { class = { "64gram-desktop", "64Gram" } },
+            properties = {
+                screen = 3,
+                tag = "2"
+            }
         }
     },
     -- }}}
 
-    awful.spawn.with_shell(startscript)
-awful.spawn.with_shell(wallscript)
-
+awful.spawn.with_shell(startscript)
 awful.spawn.with_shell([[
     setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle';
     xsct 4000;
