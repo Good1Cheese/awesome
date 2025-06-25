@@ -7,17 +7,23 @@
 touch ~/awesome-startup
 
 # BACKGROUND
-steam -silent &
+# steam -silent &
 udiskie &
 clipcatd &
 picom &
 
+# Notifications
+mako &
+
 # First monitor
 floorp &
 
+/usr/bin/launcher &
+firefox &
+
 # Third monitor
-64gram-desktop &
-dicsord --start-minimized &
+ayugram-desktop &
+discord &
 
 # STUFF
 ~/.config/awesome/scripts/layoutchanger.bash &

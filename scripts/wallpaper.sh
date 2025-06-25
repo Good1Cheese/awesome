@@ -1,1 +1,1 @@
-xwallpaper --zoom /home/rgz/.config/awesome/wallpapers/eins.png
+xwallpaper --zoom /home/rgz/.config/awesome/wallpapers/wallhaven-yqj53x.png
