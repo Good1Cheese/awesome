@@ -256,7 +256,7 @@ globalkeys = gears.table.join(
 		{ description = "go back", group = "client" }),
 
 	-- Standard program
-	awful.key({ modkey, }, "Return", function() awful.spawn('st -e fish') end,
+	awful.key({ modkey, }, "Return", function() awful.spawn(terminal .. ' -e fish') end,
 		{ description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey, "Shift" }, "\\", awesome.quit,
 		{ description = "quit awesome", group = "awesome" }),
