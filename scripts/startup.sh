@@ -24,7 +24,7 @@ librewolf &
 # firefox &
 
 # Third monitor
-# ayugram-desktop &
+64gram-desktop &
 # discord &
 
 # STUFF
