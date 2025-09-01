@@ -33,6 +33,6 @@ librewolf &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 
 # Monitors setup
-xrandr --output DisplayPort-0 --primary --mode 1920x1080 \
-	--output DisplayPort-1 --mode 1920x1080 --left-of DisplayPort-0 \
-	--output HDMI-A-0 --rate 74.97 --mode 1920x1080 --right-of DisplayPort-0 &
+xrandr --output DP-1 --primary --mode 1920x1080 \
+	--output DP-2 --mode 1920x1080 --left-of DP-1 \
+	--output HDMI-1 --rate 74.97 --mode 1920x1080 --right-of DP-1 &
