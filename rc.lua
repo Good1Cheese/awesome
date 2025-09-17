@@ -308,7 +308,10 @@ globalkeys = gears.table.join(
 		{ description = "launch yazi", group = "launcher" }),
 	awful.key({ modkey }, ";", function() awful.spawn(terminal .. " -e btop") end,
 		{ description = "launch yazi", group = "launcher" }),
-	awful.key({ modkey, "Shift" }, ";", function() awful.spawn(terminal .. " -e timer") end,
+	-- awful.key({ modkey, "Shift" }, ";", function() awful.spawn(terminal .. ' -e fish -c "timr-tui --blink on -n on"') end,
+	awful.key({ modkey, "Shift" }, ";", function()
+		awful.spawn(terminal .. [[ -e fish -c 'arttime --nolearn -a airplane -t "Будда ахуел от этих мыслей" --hours 24 -g 35m']])
+	end,
 		{ description = "launch yazi", group = "launcher" }),
 	awful.key({ modkey, "Shift" }, "e", function() awful.spawn.with_shell(bookmakrsscript) end,
 		{ description = "launch bookmakrsscript", group = "launcher" })
@@ -447,23 +450,62 @@ awful.rules.rules = {
 				maximized = false
 			}
 		},
-
-		-- {
-		--     rule = { class = "steam", name = "Friends List" },
-		--     properties = {
-		--         floating = true,
-		--         placement = awful.placement.centered,
-		--     }
-		-- },
 		{
-			rule = { class = "TwinkleLauncher" },
+			rule_any = { class = { "TwinklePlay.Launcher" } },
+			properties = {
+				screen = 3,
+				tag = "3"
+			}
+		},
+		{
+			rule_any = { name = { "Steam Settings", "Friends List" }, class = { "steam" } },
 			properties = {
 				floating = true,
 				placement = awful.placement.centered,
-				requests_no_titlebar = false,
-				titlebars_enabled = true
 			}
 		},
+		{
+			rule_any = { name = { "Save Image" }, class = { "floorp" } },
+			properties = {
+				floating = true,
+				placement = awful.placement.centered,
+			}
+		},
+		{
+			rule_any = { name = { "Welcome to GIMP 3.0.4" }, class = { "gimp" } },
+			properties = {
+				floating = true,
+				placement = awful.placement.centered,
+			}
+		},
+		{
+			rule_any = { name = { "Save File" }, class = { "xdg-desktop-portal-gtk" } },
+			properties = {
+				floating = true,
+				placement = awful.placement.centered,
+			}
+		},
+		{
+			rule_any = { class = { "discord" } },
+			properties = {
+				screen = 3,
+				tag = "1"
+			}
+		},
+		{
+			rule_any = { class = { "firefox" } },
+			properties = {
+				screen = 1,
+				tag = "1"
+			}
+		},
+		{
+			rule_any = { class = { "64Gram" } },
+			properties = {
+				screen = 3,
+				tag = "2"
+			}
+		}
 		-- {
 		--     rule = { class = "steam", name = "Steam Settings" },
 		--     properties = {
