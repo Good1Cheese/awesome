@@ -443,15 +443,15 @@ awful.rules.rules = {
 				keys = clientkeys,
 				buttons = clientbuttons,
 				screen = awful.screen.preferred,
-				placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 				maximized_vertical = false,
+				-- placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 				maximized_horizontal = false,
-				floating = false,
-				maximized = false
+				-- floating = false,
+				-- maximized = false
 			}
 		},
 		{
-			rule_any = { class = { "TwinklePlay.Launcher" } },
+			rule_any = { class = { "TwinklePlay.Launcher", "TwinklePlay" } },
 			properties = {
 				screen = 3,
 				tag = "3"
