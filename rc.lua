@@ -444,16 +444,16 @@ awful.rules.rules = {
 				buttons = clientbuttons,
 				screen = awful.screen.preferred,
 				maximized_vertical = false,
-				-- placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 				maximized_horizontal = false,
-				-- floating = false,
-				-- maximized = false
+				-- placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+				floating = false,
+				maximized = false
 			}
 		},
 		{
-			rule_any = { class = { "TwinklePlay.Launcher", "TwinklePlay" } },
+			rule_any = { class = { "TwinklePlay.Launcher", "TwinklePlay", "SteamAvaloniaApp" } },
 			properties = {
-				screen = 3,
+				screen = 1,
 				tag = "3"
 			}
 		},
@@ -488,22 +488,30 @@ awful.rules.rules = {
 		{
 			rule_any = { class = { "discord" } },
 			properties = {
-				screen = 3,
-				tag = "1"
+				screen = 1,
+				tag = "8"
 			}
 		},
 		{
 			rule_any = { class = { "firefox" } },
 			properties = {
-				screen = 1,
+				placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+				screen = 2,
 				tag = "1"
 			}
 		},
 		{
-			rule_any = { class = { "64Gram" } },
+			rule_any = { class = { "librewolf" } },
 			properties = {
-				screen = 3,
-				tag = "2"
+				screen = 2,
+				tag = "9"
+			}
+		},
+		{
+			rule_any = { class = { "64Gram", "AyuGram" } },
+			properties = {
+				screen = 1,
+				tag = "9"
 			}
 		}
 		-- {

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-entries="⏻ Shutdown\n⏾ Suspend\n⭮ Reboot\n⇠ Logout"
+entries="⏻ Shutdown\n⇠ Lock\n⏾ Suspend\n⭮ Reboot"
 
-selected=$(echo -e $entries | bemenu -c -l 4 -W .4 | awk '{print tolower($2)}')
+selected=$(echo -e "$entries" | bemenu -c -l 5 -W .5 | awk '{print tolower($2)}')
 
 case $selected in
 logout)
@@ -17,4 +17,7 @@ reboot)
 shutdown)
 	exec systemctl poweroff -i
 	;;
+lock)
+    exec betterlockscreen --lock --blur 30 --dim 10
+    ;;
 esac
